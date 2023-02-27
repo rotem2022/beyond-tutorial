@@ -54,6 +54,7 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
+  config.vm.provision "shell", path: "setup.sh", privileged: false
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
@@ -69,7 +70,7 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   # config.vm.provision "shell", inline: <<-SHELL
-  config.vm.provision "shell", path: "setup.sh", privileged: false
+  
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
